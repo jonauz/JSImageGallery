@@ -1,25 +1,24 @@
 //
-//  ViewController.swift
+//  GalleryViewController.swift
 //  ImageGallery
 //
-//  Created by Jonas Simkus on 14/08/2017.
+//  Created by Jonas Simkus on 15/08/2017.
 //  Copyright © 2017 Jonas Simkus. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class GalleryViewController: UIViewController {
+    
+    var viewModel = GalleryViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor.appDarkModerateCyan
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-
 }
-

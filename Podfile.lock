@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (4.5.0)
+  - ImageViewer (4.1.0)
+  - Kingfisher (3.10.4)
+  - Moya/Core (9.0.0-alpha.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (9.0.0-alpha.1):
+    - Moya/Core
+    - RxSwift (~> 3.3)
+  - Result (3.2.3)
+  - RxSwift (3.6.1)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - ImageViewer (~> 4.1.0)
+  - Kingfisher (~> 3.10.4)
+  - Moya/RxSwift (~> 9.0.0-alpha.1)
+  - RxSwift (~> 3.0)
+  - SwiftyJSON (~> 3.1.4)
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  ImageViewer: 163e5832e0a09e31a3e3482cce6e5e9029356174
+  Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
+  Moya: f2ce44cbd5e8be82b4761194420588b6b1aebf1e
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: b199143960f4b96321eb3a771a3c880d2af54d94
+
+COCOAPODS: 1.2.0
