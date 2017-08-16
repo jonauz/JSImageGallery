@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GalleryCollectionViewCell: UICollectionViewCell {
     
@@ -21,10 +22,15 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.backgroundColor = .appSlightlyDesaturatedCyanLimeGreen
+        contentView.addSubview(photoImageView)
     }
     
     func setup(photo: GalleryPhoto) {
         print(photo)
+        guard let imageUrlLink = photo.photoImage?.imageUrlLink, let imageURL = URL(string: imageUrlLink) else {
+            return
+        }
+        photoImageView.kf.setImage(with: ImageResource(downloadURL: imageURL))
     }
     
 }

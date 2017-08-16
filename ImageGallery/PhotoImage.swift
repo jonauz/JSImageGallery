@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 struct PhotoImage {
-    var imageUrlPath: String = ""
+    var imageUrlLink: String = ""
 }
 
 extension PhotoImage: Mappable {
@@ -18,6 +18,6 @@ extension PhotoImage: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        imageUrlPath <- map["m"]
+        imageUrlLink <- map["m"]
     }
 }

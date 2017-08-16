@@ -42,7 +42,7 @@ func ==(lhs: GalleryPhoto, rhs: GalleryPhoto) -> Bool {
         && lhs.link == rhs.link
         && lhs.photoImage != nil
         && rhs.photoImage != nil
-        && lhs.photoImage!.imageUrlPath == rhs.photoImage!.imageUrlPath
+        && lhs.photoImage!.imageUrlLink == rhs.photoImage!.imageUrlLink
         && lhs.description == rhs.description
         && lhs.published == rhs.published
         && lhs.author == rhs.author

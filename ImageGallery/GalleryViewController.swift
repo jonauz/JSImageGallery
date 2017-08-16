@@ -17,7 +17,7 @@ class GalleryViewController: UIViewController {
     fileprivate lazy var colleciontView: UICollectionView = {
         let frame = UIScreen.main.bounds
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: frame.width / 2 - 0.5, height: frame.width / 2 - 0.5)
+        layout.itemSize = CGSize(width: frame.width / 2 - 0.5, height: frame.width / 2 + 60 - 0.5)
         layout.minimumInteritemSpacing = 1
         layout.minimumLineSpacing = 1
         let view = UICollectionView(frame: frame, collectionViewLayout: layout)
@@ -31,6 +31,7 @@ class GalleryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barStyle = .blackTranslucent
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = .appVeryDarkBlue
         view.backgroundColor = .appDarkModerateCyan
@@ -41,10 +42,6 @@ class GalleryViewController: UIViewController {
         
         setupCellConfiguration()
         viewModel.fetchPhotos()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     private func setupCellConfiguration() {
