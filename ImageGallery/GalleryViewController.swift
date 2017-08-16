@@ -10,7 +10,7 @@ import UIKit
 //import RxSwift
 //import RxCocoa
 
-class GalleryViewController: UIViewController {
+class GalleryViewController: UIViewController, UITextFieldDelegate {
     
     var viewModel = GalleryViewModel()
     
@@ -28,13 +28,39 @@ class GalleryViewController: UIViewController {
         view.register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: GalleryCollectionViewCell.cellReuseIdentifier)
         return view
     }()
+    
+    fileprivate lazy var searchTextField: UITextField = {
+        let view = UITextField(frame: CGRect(x: 64, y: 6, width: self.view.frame.width - 128, height: 32))
+        view.layer.cornerRadius = 12
+        view.backgroundColor = UIColor.white
+        view.textColor = UIColor.appVeryDarkBlue
+        view.font = UIFont.systemFont(ofSize: 15)
+        view.returnKeyType = .search
+        view.placeholder = "Tags"
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 32))
+        view.leftView = leftView
+        view.leftViewMode = .always
+        view.delegate = self
+        return view
+    }()
+    
+    fileprivate lazy var confirmButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 44))
+        button.setTitle("Search", for: UIControlState.normal)
+        button.setTitleColor(UIColor.white, for: UIControlState.normal)
+        button.setTitleColor(UIColor.appVerySoftLimeGreen, for: UIControlState.highlighted)
+        button.addTarget(self, action: #selector(confirmButtonTapped), for: UIControlEvents.touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barStyle = .blackTranslucent
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = .appVeryDarkBlue
-        title = "Flickr Public Gallery"
+        navigationItem.titleView = searchTextField
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: confirmButton)
+//        title = "Flickr Public Gallery"
         view.backgroundColor = .appDarkModerateCyan
         view.addSubview(colleciontView)
         
@@ -43,6 +69,18 @@ class GalleryViewController: UIViewController {
         
         setupCellConfiguration()
         viewModel.fetchPhotos()
+    }
+    
+    func confirmButtonTapped() {
+        searchTextField.resignFirstResponder()
+        if let search = searchTextField.text, search.characters.count > 0 {
+            viewModel.fetchPhotos(for: search)
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        confirmButtonTapped()
+        return true
     }
     
     private func setupCellConfiguration() {
@@ -57,6 +95,10 @@ class GalleryViewController: UIViewController {
         //        cell.setup(photo: photo)
         //    }
         //    .disposed(by: viewModel.disposeBag)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchTextField.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
