@@ -14,15 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // https://api.flickr.com/services/feeds/photos_public.gne?format=json&per_page=5&tags=kitty
-        
         let galleryController = GalleryViewController()
-        
         let newWindow = UIWindow(frame: UIScreen.main.bounds)
         newWindow.rootViewController = UINavigationController(rootViewController: galleryController)
         newWindow.makeKeyAndVisible()
         window = newWindow
-        
         return true
     }
 

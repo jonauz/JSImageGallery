@@ -1,1 +1,5 @@
 Pods
+xcuserdata
+.DS_Store
+.bundle
+Pods
