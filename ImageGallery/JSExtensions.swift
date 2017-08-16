@@ -12,6 +12,11 @@ import UIKit
 // MARK: - Predifined app colors
 extension UIColor {
     
+    /// Hex: #a8dba8
+    static var appVerySoftLimeGreen: UIColor {
+        return UIColor(red: 0.659, green: 0.859, blue: 0.659, alpha: 1)
+    }
+    
     /// Hex: #79bd9a
     static var appSlightlyDesaturatedCyanLimeGreen: UIColor {
         return UIColor(red: 0.475, green: 0.741, blue: 0.604, alpha: 1)

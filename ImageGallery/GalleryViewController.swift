@@ -34,6 +34,7 @@ class GalleryViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .blackTranslucent
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = .appVeryDarkBlue
+        title = "Flickr Public Gallery"
         view.backgroundColor = .appDarkModerateCyan
         view.addSubview(colleciontView)
         
