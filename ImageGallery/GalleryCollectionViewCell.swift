@@ -57,7 +57,7 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         photoImageView.kf.setImage(with: ImageResource(downloadURL: imageURL))
         titleLabel.text = photo.title
         authorLabel.text = photo.author
-        dateLabel.text = photo.dateTaken
+        dateLabel.text = photo.date.prettyDateFormat
     }
     
 }

@@ -29,7 +29,7 @@ class GalleryViewModel: NSObject {
     
     func setupCollectionView(with photos: [GalleryPhoto]) {
         // #1
-        self.photos = photos
+        self.photos = photos.sorted(by: { $0.date > $1.date })
         photosUpdateHandler?()
         
         // #2

@@ -33,3 +33,24 @@ extension UIColor {
     }
     
 }
+
+// MARK: Date helpers
+extension Date {
+    
+    var prettyDateFormat: String {
+        let fomrater = DateFormatter()
+        fomrater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return fomrater.string(from: self)
+    }
+    
+}
+
+extension String {
+    
+    var convertToDate: Date? {
+        let fomrater = DateFormatter()
+        fomrater.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return fomrater.date(from: self)
+    }
+    
+}

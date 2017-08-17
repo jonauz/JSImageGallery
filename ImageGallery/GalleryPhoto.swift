@@ -14,9 +14,13 @@ struct GalleryPhoto {
     var link: String = ""
     var photoImage: PhotoImage?
     var description: String = ""
-    var published: String = ""
     var author: String = ""
     var dateTaken: String = ""
+    var published: String = ""
+    
+    var date: Date {
+        return published.convertToDate ?? Date()
+    }
 }
 
 extension GalleryPhoto: Mappable {
@@ -28,9 +32,9 @@ extension GalleryPhoto: Mappable {
         link <- map["link"]
         photoImage <- map["media"]
         description <- map["description"]
-        published <- map["published"]
         author <- map["author"]
         dateTaken <- map["date_taken"]
+        published <- map["published"]
     }
 }
 
@@ -44,9 +48,9 @@ func ==(lhs: GalleryPhoto, rhs: GalleryPhoto) -> Bool {
         && rhs.photoImage != nil
         && lhs.photoImage!.imageUrlLink == rhs.photoImage!.imageUrlLink
         && lhs.description == rhs.description
-        && lhs.published == rhs.published
         && lhs.author == rhs.author
         && lhs.dateTaken == rhs.dateTaken
+        && lhs.published == rhs.published
     )
 }
 
