@@ -9,7 +9,7 @@ pod 'Moya/RxSwift','~> 8.0.5'
 pod 'Moya-ObjectMapper/RxSwift', '~> 2.3.2'
 pod 'RxCocoa', '~> 3.6.1'
 pod 'RxSwift', '~> 3.6.1'
-pod 'SwiftyJSON', '~> 3.1.4'
+#pod 'SwiftyJSON', '~> 3.1.4'
 
 target 'ImageGallery' do
 

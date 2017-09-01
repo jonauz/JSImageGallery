@@ -1,5 +1,5 @@
 //
-//  JSConstants.swift
+//  Constants.swift
 //  ImageGallery
 //
 //  Created by Jonas Simkus on 15/08/2017.
@@ -8,8 +8,4 @@
 
 import Foundation
 
-typealias JSVoidClosure = () -> Void
-
-struct Key {
-    static let json = "json"
-}
+typealias VoidClosure = () -> Void

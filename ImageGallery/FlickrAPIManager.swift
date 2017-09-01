@@ -73,7 +73,7 @@ extension FlickrAPI: TargetType {
     }
     
     private func baseParameters() -> [String: String] {
-        return ["format": Key.json, "nojsoncallback": "1"]
+        return ["format": "json", "nojsoncallback": "1"]
     }
 }
 
@@ -90,7 +90,7 @@ struct FlickrAPIManager {
 
 extension FlickrAPIManager {
     
-    func requestObject<T: Mappable>(_ token: FlickrAPI, type: T.Type, completion: @escaping (T?) -> Void, additionalSteps: JSVoidClosure? = nil) {
+    func requestObject<T: Mappable>(_ token: FlickrAPI, type: T.Type, completion: @escaping (T?) -> Void, additionalSteps: VoidClosure? = nil) {
         provider.request(token)
             .debug()
             .mapObject(T.self)
@@ -108,7 +108,7 @@ extension FlickrAPIManager {
             }.addDisposableTo(disposeBag)
     }
     
-    func requestArray<T: Mappable>(_ token: FlickrAPI, type: T.Type, completion: @escaping ([T]?) -> Void, additionalSteps: JSVoidClosure? = nil) {
+    func requestArray<T: Mappable>(_ token: FlickrAPI, type: T.Type, completion: @escaping ([T]?) -> Void, additionalSteps: VoidClosure? = nil) {
         provider.request(token)
             .debug()
             .map { response -> Response in

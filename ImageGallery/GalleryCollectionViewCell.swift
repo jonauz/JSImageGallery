@@ -22,28 +22,28 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 5, y: self.contentView.frame.width, width: self.contentView.frame.width - 10, height: 20))
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor.appVeryDarkBlue
+        label.textColor = .defaultVeryDarkBlue
         return label
     }()
     
     fileprivate lazy var authorLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 5, y: self.contentView.frame.width + 20, width: self.contentView.frame.width - 10, height: 20))
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = UIColor.appDarkModerateCyan
+        label.textColor = .defaultDarkModerateCyan
         return label
     }()
     
     fileprivate lazy var dateLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 5, y: self.contentView.frame.width + 40, width: self.contentView.frame.width - 10, height: 20))
         label.font = UIFont.systemFont(ofSize: 10)
-        label.textColor = UIColor.appDarkModerateCyan
+        label.textColor = .defaultDarkModerateCyan
         label.textAlignment = .right
         return label
     }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.backgroundColor = .appVerySoftLimeGreen
+        contentView.backgroundColor = .defaultVerySoftLimeGreen
         contentView.addSubview(photoImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(authorLabel)

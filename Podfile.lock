@@ -22,7 +22,6 @@ PODS:
   - RxCocoa (3.6.1):
     - RxSwift (~> 3.6)
   - RxSwift (3.6.1)
-  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - ImageViewer (~> 4.1.0)
@@ -31,7 +30,6 @@ DEPENDENCIES:
   - Moya/RxSwift (~> 8.0.5)
   - RxCocoa (~> 3.6.1)
   - RxSwift (~> 3.6.1)
-  - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -43,8 +41,7 @@ SPEC CHECKSUMS:
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 4d6486e994c7993536824e9ab28831f5909591b0
+PODFILE CHECKSUM: b3005fc215e7665173a9fb1b8dc8c8f89ab55fd0
 
 COCOAPODS: 1.2.0

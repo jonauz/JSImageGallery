@@ -17,7 +17,7 @@ class GalleryViewModel: NSObject {
     
     var photos: [GalleryPhoto] = []
     //var photos2: Observable<[GalleryPhoto]> = Observable.just([GalleryPhoto]())
-    var photosUpdateHandler: JSVoidClosure?
+    var photosUpdateHandler: VoidClosure?
     
     func fetchPhotos(for query: String? = nil) {
         apiManager.galleryPhotos(query: query) { (photos) in

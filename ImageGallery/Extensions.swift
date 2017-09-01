@@ -1,5 +1,5 @@
 //
-//  JSExtensions.swift
+//  Extensions.swift
 //  ImageGallery
 //
 //  Created by Jonas Simkus on 15/08/2017.
@@ -13,22 +13,22 @@ import UIKit
 extension UIColor {
     
     /// Hex: #a8dba8
-    static var appVerySoftLimeGreen: UIColor {
+    static var defaultVerySoftLimeGreen: UIColor {
         return UIColor(red: 0.659, green: 0.859, blue: 0.659, alpha: 1)
     }
     
     /// Hex: #79bd9a
-    static var appSlightlyDesaturatedCyanLimeGreen: UIColor {
+    static var defaultSlightlyDesaturatedCyanLimeGreen: UIColor {
         return UIColor(red: 0.475, green: 0.741, blue: 0.604, alpha: 1)
     }
     
     /// Hex: #3b8686
-    static var appDarkModerateCyan: UIColor {
+    static var defaultDarkModerateCyan: UIColor {
         return UIColor(red: 0.231, green: 0.525, blue: 0.525, alpha: 1)
     }
     
     /// Hex: #0b486b
-    static var appVeryDarkBlue: UIColor {
+    static var defaultVeryDarkBlue: UIColor {
         return UIColor(red: 0.043, green: 0.282, blue: 0.42, alpha: 1)
     }
     
@@ -38,9 +38,9 @@ extension UIColor {
 extension Date {
     
     var prettyDateFormat: String {
-        let fomrater = DateFormatter()
-        fomrater.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return fomrater.string(from: self)
+        let formater = DateFormatter()
+        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formater.string(from: self)
     }
     
 }
@@ -48,9 +48,9 @@ extension Date {
 extension String {
     
     var convertToDate: Date? {
-        let fomrater = DateFormatter()
-        fomrater.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        return fomrater.date(from: self)
+        let formater = DateFormatter()
+        formater.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return formater.date(from: self)
     }
     
 }
